@@ -25,7 +25,7 @@ $(".update").on("click", function() {
             input: "text"
         }
     ]).then(function(result) {
-        result.unshift("update");
+        result.value.unshift("update");
         console.log(result.value);
         // $.ajax({
         //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/update",
@@ -62,7 +62,7 @@ $(".delete").on("click", function() {
             input: "text"
         }
     ]).then(function(result) {
-        result.unshift("delete");
+        result.value.unshift("delete");
         console.log(result.value);
         // $.ajax({
         //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/delete",
@@ -100,7 +100,7 @@ $(".create").on("click", function() {
             input: "text"
         }
     ]).then(function(result) {
-        result.unshift("create");
+        result.value.unshift("create");
         console.log(result.value);
         // $.ajax({
         //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/create",
