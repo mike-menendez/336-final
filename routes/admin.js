@@ -78,7 +78,8 @@ router.post('/create', function(req, res, next) {
 
     connection.connect();
     var q = "";
-    console.log(req);
+    console.log("REQ: ", req);
+    console.log("BODY: ", req.body);
     if (req.body[0] == "items") {
         q = "INSERT INTO items (p_name, cat, price, img) VALUES (\"" + req.body.p_name + "\", \"" + req.body.cat + "\", \"" + req.body.price + "\", \"" + req.body.img + "\")";
     } else if (req.body[0] == "users") {

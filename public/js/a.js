@@ -27,18 +27,18 @@ $(".update").on("click", function() {
     ]).then(function(result) {
         result.value.unshift("update");
         console.log(result.value);
-        // $.ajax({
-        //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/update",
-        //     type: "POST",
-        //     data: result.value,
-        //     success: function(res) {
-        //         Swal.fire({
-        //             title: "Update completed",
-        //             icon: "success",
-        //             showConfirmButton: true
-        //         });
-        //     }
-        // });
+        $.ajax({
+            url: "https://final-cst336-mmenendez.herokuapp.com/admin/update",
+            type: "POST",
+            data: result.value,
+            success: function(res) {
+                Swal.fire({
+                    title: "Update completed",
+                    icon: "success",
+                    showConfirmButton: true
+                });
+            }
+        });
     });
 });
 
@@ -64,18 +64,18 @@ $(".delete").on("click", function() {
     ]).then(function(result) {
         result.value.unshift("delete");
         console.log(result.value);
-        // $.ajax({
-        //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/delete",
-        //     type: "POST",
-        //     data: result.value,
-        //     success: function(res) {
-        //         Swal.fire({
-        //             title: "Update completed",
-        //             icon: "success",
-        //             showConfirmButton: true
-        //         });
-        //     }
-        // });
+        $.ajax({
+            url: "https://final-cst336-mmenendez.herokuapp.com/admin/delete",
+            type: "POST",
+            data: result.value,
+            success: function(res) {
+                Swal.fire({
+                    title: "Update completed",
+                    icon: "success",
+                    showConfirmButton: true
+                });
+            }
+        });
     });
 
 });
@@ -102,17 +102,17 @@ $(".create").on("click", function() {
     ]).then(function(result) {
         result.value.unshift("create");
         console.log(result.value);
-        // $.ajax({
-        //     url: "https://final-cst336-mmenendez.herokuapp.com/admin/create",
-        //     type: "POST",
-        //     data: result.value,
-        //     success: function(res) {
-        //         Swal.fire({
-        //             title: "Update completed",
-        //             icon: "success",
-        //             showConfirmButton: true
-        //         });
-        //     }
-        // });
+        $.ajax({
+            url: "https://final-cst336-mmenendez.herokuapp.com/admin/create",
+            type: "POST",
+            data: result.value,
+            success: function(res) {
+                Swal.fire({
+                    title: "Update completed",
+                    icon: "success",
+                    showConfirmButton: true
+                });
+            }
+        });
     });
 });
