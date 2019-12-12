@@ -7,6 +7,12 @@ $(document).ready(function() {
     console.log(cart);
   }
   cartPage = "";
+
+  const ids = Object.keys(cart);
+  for (const id of ids) {
+    console.log(id);
+  }
+
   
 });
 
