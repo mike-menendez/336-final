@@ -52,7 +52,6 @@ $(".q3").on("click", function() {
     });
 });
 
-
 $(".update").on("click", function() {
     Swal.mixin({
         confirmButtonText: 'Next &rarr;',
