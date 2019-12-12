@@ -42,8 +42,9 @@ $(document).ready(function() {
                 $(".cart").text(function() { return itm; });
                 var cart = sessionStorage.getItem("cart");
                 if (cart == null) {
-                    let id = this.id
-                    cart = {id : 1}
+                    cart = new Object;
+                    cart[this.id] = 0;
+
                 }
                 else{
                     console.log(cart);
