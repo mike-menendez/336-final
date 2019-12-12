@@ -24,7 +24,7 @@ $(document).ready(function() {
             $(document.body).append(x);
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
-                    title: this.id,
+                    title: "Uh-Oh",
                     text: "This will eventaully redirect to the item page.",
                     animation: true,
                     icon: 'info',
