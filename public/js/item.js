@@ -13,7 +13,7 @@ $(document).ready(function() {
                 x = x + '<div class = "card shadow m-5 p-5 col-4">\n' +
                     '<img max-width="100%" height="auto" src = "' + element.img + '">\n</a>\n' +
                     '<div class = "card-body"> <h2 class = "card-title">\n' + element.p_name + '</h2> <p class = "card-text">Price: $' + element.price + '</p>\n' +
-                    '<button class = "btn btn-success crt" id = "' + element.item_id + '">Add to Cart</button></div></div>';
+                    '<button class = "btn btn-success crt" id = "' + element.item_id + "-" + element.p_name + '">Add to Cart</button></div></div>';
                 if (i == 4) {
                     i = 0;
                     x = x + "</div>";
@@ -25,7 +25,7 @@ $(document).ready(function() {
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
                     title: "Item Added!",
-                    text: "Go to cart to view",
+                    text: this.id,
                     animation: true,
                     icon: 'info',
                     showConfirmButton: true
@@ -44,7 +44,6 @@ $(document).ready(function() {
                 if (cart == null) {
                     cart = new Object;
                     cart[this.id] = 1;
-
                 }
                 else {
                     cart = JSON.parse(cart);
@@ -54,7 +53,6 @@ $(document).ready(function() {
                     else {
                         cart[this.id] = 1;
                     }
-                    console.log(cart);
                 }
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
             });
