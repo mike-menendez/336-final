@@ -24,7 +24,7 @@ $(document).ready(function() {
             $(document.body).append(x);
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
-                    title: "Uh-Oh",
+                    title: this.id,
                     text: "This will eventaully redirect to the item page.",
                     animation: true,
                     icon: 'info',
@@ -36,7 +36,6 @@ $(document).ready(function() {
                 } 
                 itm = Number(itm) + 1;
                 sessionStorage.setItem("icount", itm);
-                console.log(itm);
                 if (itm > 9) {
                     itm = "9+";
                 }
