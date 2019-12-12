@@ -10,7 +10,7 @@ var authRouter = require('./routes/signin');
 var adminRouter = require('./routes/admin');
 var searchRouter = require('./routes/search');
 var thirdPartyRouter = require('./routes/3rdparty');
-var checkoutRouter = require('.routes/checkout');
+var checkoutRouter = require('./routes/checkout');
 
 var app = express();
 
