@@ -14,7 +14,7 @@ $(document).ready(function() {
                     '<img max-width="100%" height="auto" src = "' + element.img + '">\n</a>\n' +
                     '<div class = "card-body"> <h2 class = "card-title">\n' + element.p_name + '</h2> <p class = "card-text">Description Goes Here!</p>\n' +
                     '<button id=' + element.item_id + 'class = "btn btn-success crt">Add to Cart</button>' + 
-                    '\n<p class = "card-text">' + element.price + '</p></div></div>';
+                    '\n\n<p class = "card-text">Price:$' + element.price + '</p></div></div>';
                 if (i == 4) {
                     i = 0;
                     x = x + "</div>";
