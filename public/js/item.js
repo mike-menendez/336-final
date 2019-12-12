@@ -41,9 +41,11 @@ $(document).ready(function() {
                 }
                 $(".cart").text(function() { return itm; });
                 var cart = sessionStorage.getItem("cart");
+                btnid = this.id;
+                id, name = btnid.split("-");
                 if (cart == null) {
                     cart = new Object;
-                    cart[this.id] = 1;
+                    cart[this.id] = [1, name];
                 }
                 else {
                     cart = JSON.parse(cart);
@@ -54,6 +56,7 @@ $(document).ready(function() {
                         cart[this.id] = 1;
                     }
                 }
+                console.log(cart);
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
             });
         }
