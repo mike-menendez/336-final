@@ -25,7 +25,7 @@ $(document).ready(function() {
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
                     title: "Item Added!",
-                    text: "Click cart to view!",
+                    text: "Go to cart to view",
                     animation: true,
                     icon: 'info',
                     showConfirmButton: true
@@ -40,6 +40,14 @@ $(document).ready(function() {
                     itm = "9+";
                 }
                 $(".cart").text(function() { return itm; });
+                var cart = sessionStorage.getItem("cart");
+                if (cart == null) {
+                    cart = {this.id: 1}
+                }
+                else{
+                    console.log(cart);
+                }
+                sessionStorage.setItem("cart", JSON.stringify(cart));       
             });
         }
     });
