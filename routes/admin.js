@@ -146,7 +146,7 @@ router.post('/create', function(req, res, next) {
 
     // connection.connect();
     var q = "";
-    console.log("REQ: ", req.body);
+    console.log("REQ: ", req.body.Value);
     // console.log("BODY: ", req.body);
     // if (req.body[0] == "items") {
     //     q = "INSERT INTO items (p_name, cat, price, img) VALUES (\"" + req.body.p_name + "\", \"" + req.body.cat + "\", \"" + req.body.price + "\", \"" + req.body.img + "\")";
