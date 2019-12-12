@@ -12,8 +12,8 @@ $(document).ready(function() {
                 }
                 x = x + '<div class = "card shadow m-5 p-5 col-4">\n' +
                     '<img max-width="100%" height="auto" src = "' + element.img + '">\n</a>\n' +
-                    '<div class = "card-body"> <h2 class = "card-title">\nPrice: $' + element.price + '</h2> <p class = "card-text">Description Goes Here!</p>\n' +
-                    '<button id=' + element.item_id + 'class = "btn btn-success crt">Add to Cart</button></div></div>';
+                    '<div class = "card-body"> <h2 class = "card-title">\n' + element.p_name + '</h2> <p class = "card-text">Price: $' + element.price + '</p>\n' +
+                    '<button id=' + element.item_id  class = "btn btn-success crt">Add to Cart</button></div></div>';
                 if (i == 4) {
                     i = 0;
                     x = x + "</div>";
