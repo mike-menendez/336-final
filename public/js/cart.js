@@ -10,7 +10,7 @@ $(document).ready(function() {
     for (const id of ids) {
       let qt = cart[id][0];
       let name = cart[id][1];
-      let price = qt * cart[i][2];
+      let price = qt * cart[id][2];
       total = total + price;
       console.log(qt, name, price, total);
     }
