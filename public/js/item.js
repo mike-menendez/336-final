@@ -48,15 +48,15 @@ $(document).ready(function() {
                     cart = new Object;
                     cart[split[0]] = [1, split[1]];
                 }
-                // else {
-                //     cart = JSON.parse(cart);
-                //     if (this.id in cart) {
-                //         cart[this.id] = cart[this.id] + 1;
-                //     }
-                //     else {
-                //         cart[this.id] = 1;
-                //     }
-                // }
+                else {
+                    cart = JSON.parse(cart);
+                    if (split[0] in cart) {
+                        cart[split[0]][0] = cart[split[0]][0] + 1;
+                    }
+                    else {
+                        cart[split[0] = [1, split[1]];
+                    }
+                }
                 console.log(cart);
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
             });
