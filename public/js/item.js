@@ -25,7 +25,7 @@ $(document).ready(function() {
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
                     title: "Item Added!",
-                    text: this.id,
+                    text: "May now view in cart.",
                     animation: true,
                     icon: 'info',
                     showConfirmButton: true
