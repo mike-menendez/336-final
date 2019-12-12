@@ -42,20 +42,20 @@ $(document).ready(function() {
                 $(".cart").text(function() { return itm; });
                 var cart = sessionStorage.getItem("cart");
                 btnid = this.id;
-                id, name = btnid.split("-");
+                split = btnid.split("-");
                 if (cart == null) {
                     cart = new Object;
-                    cart[this.id] = [1, name];
+                    cart[this.split[0]] = [1, split[1]];
                 }
-                else {
-                    cart = JSON.parse(cart);
-                    if (this.id in cart) {
-                        cart[this.id] = cart[this.id] + 1;
-                    }
-                    else {
-                        cart[this.id] = 1;
-                    }
-                }
+                // else {
+                //     cart = JSON.parse(cart);
+                //     if (this.id in cart) {
+                //         cart[this.id] = cart[this.id] + 1;
+                //     }
+                //     else {
+                //         cart[this.id] = 1;
+                //     }
+                // }
                 console.log(cart);
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
             });
