@@ -44,10 +44,10 @@ $(document).ready(function() {
                 btnid = this.id;
                 split = btnid.split("-");
                 console.log(split);
-                // if (cart == null) {
-                //     cart = new Object;
-                //     cart[this.split[0]] = [1, split[1]];
-                // }
+                if (cart == null) {
+                    cart = new Object;
+                    cart[split[0]] = [1, split[1]];
+                }
                 // else {
                 //     cart = JSON.parse(cart);
                 //     if (this.id in cart) {
