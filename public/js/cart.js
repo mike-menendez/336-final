@@ -51,6 +51,7 @@ $(document).ready(function() {
                   </div>
                 </div>
               </div>`
+    $(document.body).append(cartPage);
   }
 
 });
