@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  sessionStorage.setitem("icount") = 5;
+  sessionStorage.setItem("icount") = 5;
 });
