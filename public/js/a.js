@@ -152,7 +152,7 @@ $(".create").on("click", function() {
         $.ajax({
             url: "https://final-cst336-mmenendez.herokuapp.com/admin/create",
             type: "POST",
-            data: { "Value": result.value[2] },
+            data: { "Value": result.value[2], "Table": result.value[1] },
             success: function(res) {
                 Swal.fire({
                     title: "Update completed",
