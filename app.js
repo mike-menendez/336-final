@@ -10,6 +10,7 @@ var authRouter = require('./routes/signin');
 var adminRouter = require('./routes/admin');
 var searchRouter = require('./routes/search');
 var thirdPartyRouter = require('./routes/3rdparty');
+var checkoutRouter = require('.routes/checkout');
 
 var app = express();
 
@@ -29,5 +30,6 @@ app.use('/admin', adminRouter);
 app.use('/auth', authRouter);
 app.use('/search', searchRouter);
 app.use('/3rdparty', thirdPartyRouter);
+app.use('/checkout', checkoutRouter);
 
 module.exports = app;
