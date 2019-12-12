@@ -38,7 +38,7 @@ $(document).ready(function() {
                               <th scope="row" class="border-0">
                                 <div class="p-2">
                                   <div class="ml-3 d-inline-block align-middle">
-                                    <h5 class="mb-0">` + name `</h5>
+                                    <h5 class="mb-0">` + name + `</h5>
                                   </div>
                                 </div>
                               </th>
