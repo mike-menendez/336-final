@@ -4,6 +4,49 @@ $(document).ready(function() {
     }
 });
 
+$(".q1").on("click", function() {
+    // Get average prices from the table
+
+    $.ajax({
+        url: "https://final-cst336-mmenendez.herokuapp.com/admin/q1",
+        type: "GET"
+    }).then((results) => {
+        Swal.fire({
+            title: 'Average Price of all items',
+            text: results.avg,
+            showConfirmButton: true
+        });
+    });
+});
+
+$(".q2").on("click", function() {
+    // Get average number of instances sold
+    $.ajax({
+        url: "https://final-cst336-mmenendez.herokuapp.com/admin/q2",
+        type: "GET"
+    }).then((results) => {
+        Swal.fire({
+            title: "Average Number of Items Sold",
+            text: results.avg,
+            showConfirmButton: true
+        });
+    });
+});
+
+$(".q3").on("click", function() {
+    // Get price of most frequently purchased item
+    $.ajax({
+        url: "https://final-cst336-mmenendez.herokuapp.com/admin/q3",
+        type: "GET"
+    }).then((results) => {
+        Swal.fire({
+            title: "Price of Most Frequently Purchased Item",
+            text: results.avg,
+            showConfirmButton: true
+        });
+    });
+});
+
 
 $(".update").on("click", function() {
     Swal.mixin({

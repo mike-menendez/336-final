@@ -66,6 +66,66 @@ router.post('/update', function(req, res, next) {
     });
 });
 
+// Get average prices from the table
+router.get("/q1", function(req, res, next) {
+    var connection = mysql.createConnection({
+        host: "tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        user: "vdn3cm4glt7egrwm",
+        password: "zid8gz1jh2x49c32",
+        database: "bza0dnwn2s35uasl"
+    });
+
+    connection.connect();
+    connection.query("SELECT AVG(price) FROM items", function(err, results) {
+        if (err) {
+            console.log("error:   ", err);
+            throw err;
+        }
+        console.log(JSON.stringify(results));
+        connection.end();
+        res.json(JSON.stringify(results)).status(200);
+    });
+
+});
+
+// Get average number of instances sold
+router.get("/q2", function(req, res, next) {
+    var connection = mysql.createConnection({
+        host: "tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        user: "vdn3cm4glt7egrwm",
+        password: "zid8gz1jh2x49c32",
+        database: "bza0dnwn2s35uasl"
+    });
+
+    connection.connect();
+    connection.query("SELECT AVG(quantity) FROM order_hist", function(req, res, next) {
+        if (err) {
+            console.log("error:    ", err);
+            throw err;
+        }
+        console.log(JSON.stringify(result));
+        connection.end();
+        res.json(JSON.stringify(results)).status(200);
+    });
+});
+
+// Get price of most frequently purchased item
+router.get("/q3", function(req, res, next) {
+    var connection = mysql.createConnection({
+        host: "tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        user: "vdn3cm4glt7egrwm",
+        password: "zid8gz1jh2x49c32",
+        database: "bza0dnwn2s35uasl"
+    });
+    connection.connect();
+    connection.query("SELECT price FROM order_hist LEFT JOIN items ORDER BY quantity LIMIT 1", function(req, results, next) {
+        if (err) {
+            console.log("error, ", err);
+        }
+        console.log(JSON.stringify(results));
+        res.json(JSON.stringify(results)).status(200);
+    });
+});
 
 
 router.post('/create', function(req, res, next) {
