@@ -46,7 +46,14 @@ $(document).ready(function() {
                     cart[this.id] = 0;
 
                 }
-                else{
+                else {
+                    cart = JSON.parse(cart);
+                    if (this.id in cart) {
+                        cart[this.id] = cart[this.id] + 1;
+                    }
+                    else {
+                        cart[this.id] = 0;
+                    }
                     console.log(cart);
                 }
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
