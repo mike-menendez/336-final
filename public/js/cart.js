@@ -6,8 +6,13 @@ $(document).ready(function() {
     cart = JSON.parse(cart);
     console.log(cart);
     const ids = Object.keys(cart);
+    let total = 0;
     for (const id of ids) {
-      console.log(id);
+      let qt = cart[id][0];
+      let name = cart[id][1];
+      let price = qt * cart[i][2];
+      total = total + price;
+      console.log(qt, name, price, total);
     }
   cartPage = "";
   }
