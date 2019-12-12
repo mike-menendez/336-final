@@ -24,8 +24,8 @@ $(document).ready(function() {
             $(document.body).append(x);
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
-                    title: "Uh-Oh",
-                    text: this.id,
+                    title: "Item Added!",
+                    text: "Click cart to view!",
                     animation: true,
                     icon: 'info',
                     showConfirmButton: true
