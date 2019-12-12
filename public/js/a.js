@@ -11,6 +11,7 @@ $(".q1").on("click", function() {
         url: "https://final-cst336-mmenendez.herokuapp.com/admin/q1",
         type: "GET"
     }).then((results) => {
+        console.log(results);
         Swal.fire({
             title: 'Average Price of all items',
             text: results.avg,
@@ -25,6 +26,8 @@ $(".q2").on("click", function() {
         url: "https://final-cst336-mmenendez.herokuapp.com/admin/q2",
         type: "GET"
     }).then((results) => {
+        console.log(results);
+
         Swal.fire({
             title: "Average Number of Items Sold",
             text: results.avg,
@@ -39,6 +42,8 @@ $(".q3").on("click", function() {
         url: "https://final-cst336-mmenendez.herokuapp.com/admin/q3",
         type: "GET"
     }).then((results) => {
+        console.log(results);
+
         Swal.fire({
             title: "Price of Most Frequently Purchased Item",
             text: results.avg,
