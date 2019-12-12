@@ -43,10 +43,11 @@ $(document).ready(function() {
                 var cart = sessionStorage.getItem("cart");
                 btnid = this.id;
                 split = btnid.split("-");
-                if (cart == null) {
-                    cart = new Object;
-                    cart[this.split[0]] = [1, split[1]];
-                }
+                console.log(split);
+                // if (cart == null) {
+                //     cart = new Object;
+                //     cart[this.split[0]] = [1, split[1]];
+                // }
                 // else {
                 //     cart = JSON.parse(cart);
                 //     if (this.id in cart) {
