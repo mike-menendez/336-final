@@ -118,7 +118,7 @@ router.get("/q3", function(req, res, next) {
         database: "bza0dnwn2s35uasl"
     });
     connection.connect();
-    connection.query("SELECT price FROM order_hist LEFT JOIN items ORDER BY quantity LIMIT 1", function(err, results) {
+    connection.query("SELECT price FROM order_hist LEFT JOIN items ON order_hist.item_id = items.item_id ORDER BY quantity LIMIT 1", function(err, results) {
         if (err) {
             console.log("error, ", err);
         }
