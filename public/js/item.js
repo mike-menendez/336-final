@@ -34,8 +34,9 @@ $(document).ready(function() {
                 if (itm == null) {
                     itm = 0;
                 } 
-                itm = itm + 1;
+                itm = Number(itm) + 1;
                 sessionStorage.setItem("icount", itm);
+                console.log(itm);
                 if (itm > 9) {
                     itm = "9+";
                 }
