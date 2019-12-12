@@ -30,6 +30,16 @@ $(document).ready(function() {
                     icon: 'info',
                     showConfirmButton: true
                 });
+                var itm = sessionStorage.getItem("icount");
+                if (itm == null) {
+                    itm = 0;
+                } 
+                itm = itm + 1;
+                sessionStorage.setItem("icount", itm);
+                else if (itm > 9) {
+                    itm = "9+";
+                }
+                $(".cart").text(function() { return itm; });
             });
         }
     });

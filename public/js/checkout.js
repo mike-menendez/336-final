@@ -1,3 +1,4 @@
 $(document).ready(function() {
-  $(".cart").text(function() { return 5; });
+  $(".cart").text(function() { return 0; });
+  sessionStorage.setItem("icount", 0);
 });
