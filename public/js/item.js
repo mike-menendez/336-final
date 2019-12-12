@@ -54,7 +54,7 @@ $(document).ready(function() {
                         cart[split[0]][0] = cart[split[0]][0] + 1;
                     }
                     else {
-                        cart[split[0] = [1, split[1]];
+                        cart[split[0]] = [1, split[1]];
                     }
                 }
                 console.log(cart);
