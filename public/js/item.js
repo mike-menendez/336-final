@@ -53,7 +53,7 @@ $(document).ready(function() {
                         cart[split[0]][0] = cart[split[0]][0] + 1;
                     }
                     else {
-                        cart[split[0]] = [1, split[1], Number(split[2]]);
+                        cart[split[0]] = [1, split[1], Number(split[2])];
                     }
                 }
                 sessionStorage.setItem("cart", JSON.stringify(cart));       
