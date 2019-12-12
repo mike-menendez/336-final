@@ -98,12 +98,12 @@ router.get("/q2", function(req, res, next) {
     });
 
     connection.connect();
-    connection.query("SELECT AVG(quantity) FROM order_hist", function(req, res, next) {
+    connection.query("SELECT AVG(quantity) FROM order_hist", function(err, results) {
         if (err) {
             console.log("error:    ", err);
             throw err;
         }
-        console.log(JSON.stringify(result));
+        console.log(JSON.stringify(results));
         connection.end();
         res.json(JSON.stringify(results)).status(200);
     });
@@ -118,7 +118,7 @@ router.get("/q3", function(req, res, next) {
         database: "bza0dnwn2s35uasl"
     });
     connection.connect();
-    connection.query("SELECT price FROM order_hist LEFT JOIN items ORDER BY quantity LIMIT 1", function(req, results, next) {
+    connection.query("SELECT price FROM order_hist LEFT JOIN items ORDER BY quantity LIMIT 1", function(err, results) {
         if (err) {
             console.log("error, ", err);
         }
