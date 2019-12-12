@@ -19,6 +19,8 @@ $(document).ready(function() {
                     x = x + "</div>";
                 }
                 i++;
+                console.log(element.img);
+                console.log(element.p_name);
             });
             x = x + "</div></div>";
             $(document.body).append(x);
