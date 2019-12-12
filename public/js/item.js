@@ -25,7 +25,7 @@ $(document).ready(function() {
             $(document).on("click", ".btn-success", function() {
                 Swal.fire({
                     title: "Uh-Oh",
-                    text: "This will eventaully redirect to the item page.",
+                    text: this.id,
                     animation: true,
                     icon: 'info',
                     showConfirmButton: true
