@@ -13,7 +13,7 @@ $(document).ready(function() {
                 x = x + '<div class = "card shadow m-5 p-5 col-4">\n' +
                     '<img max-width="100%" height="auto" src = "' + element.img + '">\n</a>\n' +
                     '<div class = "card-body"> <h2 class = "card-title">\n' + element.p_name + '</h2> <p class = "card-text">Price: $' + element.price + '</p>\n' +
-                    '<button class = "btn btn-success crt" id = "' + element.id '" +>Add to Cart</button></div></div>';
+                    '<button class = "btn btn-success crt" id = ' + element.id ' +>Add to Cart</button></div></div>';
                 if (i == 4) {
                     i = 0;
                     x = x + "</div>";
