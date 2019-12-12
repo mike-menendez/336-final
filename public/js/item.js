@@ -45,7 +45,7 @@ $(document).ready(function() {
                 split = btnid.split("-");
                 if (cart == null) {
                     cart = new Object;
-                    cart[split[0]] = [1, split[1], Number(split[2]]);
+                    cart[split[0]] = [1, split[1], Number(split[2])];
                 }
                 else {
                     cart = JSON.parse(cart);
