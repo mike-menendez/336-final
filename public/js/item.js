@@ -43,7 +43,7 @@ $(document).ready(function() {
                 var cart = sessionStorage.getItem("cart");
                 if (cart == null) {
                     cart = new Object;
-                    cart[this.id] = 0;
+                    cart[this.id] = 1;
 
                 }
                 else {
@@ -52,7 +52,7 @@ $(document).ready(function() {
                         cart[this.id] = cart[this.id] + 1;
                     }
                     else {
-                        cart[this.id] = 0;
+                        cart[this.id] = 1;
                     }
                     console.log(cart);
                 }
