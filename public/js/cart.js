@@ -5,13 +5,15 @@ $(document).ready(function() {
   if (cart != null) {
     cart = JSON.parse(cart);
     console.log(cart);
-  }
+    const ids = Object.keys(cart);
+    for (const id of ids) {
+      console.log(id);
+    }
   cartPage = "";
-
-  const ids = Object.keys(cart);
-  for (const id of ids) {
-    console.log(id);
   }
+
+
+
 
   
 });
