@@ -14,7 +14,7 @@ $(".q1").on("click", function() {
         console.log(results);
         Swal.fire({
             title: 'Average Price of all items',
-            text: results.avg,
+            text: JSON.parse(results)[0]["AVG(price)"],
             showConfirmButton: true
         });
     });
@@ -30,7 +30,7 @@ $(".q2").on("click", function() {
 
         Swal.fire({
             title: "Average Number of Items Sold",
-            text: results.avg,
+            text: JSON.parse(results)[0]["AVG(quantity)"],
             showConfirmButton: true
         });
     });
@@ -46,7 +46,7 @@ $(".q3").on("click", function() {
 
         Swal.fire({
             title: "Price of Most Frequently Purchased Item",
-            text: results.avg,
+            text: JSON.parse(results)[0]["price"],
             showConfirmButton: true
         });
     });
