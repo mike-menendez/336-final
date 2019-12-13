@@ -110,9 +110,6 @@ router.get("/q2", function(req, res, next) {
         connection.end();
         res.json(JSON.stringify(results)).status(200);
     });
-    var q = "";
-    console.log("REQ: ", req);
-    console.log("BODY: ", req.body);
     res.send(200);
 });
 
@@ -132,9 +129,6 @@ router.get("/q3", function(req, res, next) {
         console.log(JSON.stringify(results));
         res.json(JSON.stringify(results)).status(200);
     });
-    var q = "";
-    console.log("REQ: ", req);
-    console.log("BODY: ", req.body);
     res.status(200);
 });
 
