@@ -110,7 +110,6 @@ router.get("/q2", function(req, res, next) {
         connection.end();
         res.json(JSON.stringify(results)).status(200);
     });
-    res.send(200);
 });
 
 // Get price of most frequently purchased item
@@ -129,7 +128,6 @@ router.get("/q3", function(req, res, next) {
         console.log(JSON.stringify(results));
         res.json(JSON.stringify(results)).status(200);
     });
-    res.status(200);
 });
 
 
