@@ -46,6 +46,7 @@ router.post('/update', function(req, res, next) {
     });
 
     connection.connect();
+    console.log(req.body);
     var x = req.body[2].split(",");
     console.log(x);
     connection.query('UPDATE ? SET ? = ? WHERE ? = ?', [req.body[1], x[0], x[1], x[2], x[3]], function(err, results) {
