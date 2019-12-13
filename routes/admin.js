@@ -18,8 +18,9 @@ router.post('/delete', function(req, res, next) {
     });
 
     connection.connect();
-
-    connection.query('DELETE FROM ? WHERE ? = ?', [req.body.table, req.body.field, req.body.val], function(err, results) {
+    var x = req.body.vals.split(",");
+    console.log(x);
+    connection.query('DELETE FROM ? WHERE ? = ?', [req.body.table, x[0], x[1]], function(err, results) {
         if (err) {
             console.log(connection.state);
             console.log(err);
@@ -47,9 +48,9 @@ router.post('/update', function(req, res, next) {
 
     connection.connect();
     console.log(req.body);
-    var x = req.body[2].split(",");
+    var x = req.body.vals.split(",");
     console.log(x);
-    connection.query('UPDATE ? SET ? = ? WHERE ? = ?', [req.body[1], x[0], x[1], x[2], x[3]], function(err, results) {
+    connection.query('UPDATE ? SET ? = ? WHERE ? = ?', [req.body.table, x[0], x[1], x[2], x[3]], function(err, results) {
         if (err) {
             console.log(connection.state);
             console.log(err);
@@ -146,34 +147,35 @@ router.post('/create', function(req, res, next) {
         database: "bza0dnwn2s35uasl"
     });
 
-    // connection.connect();
+    connection.connect();
     var q = "";
-    console.log("REQ: ", req.body.Value);
-    // console.log("BODY: ", req.body);
-    // if (req.body[0] == "items") {
-    //     q = "INSERT INTO items (p_name, cat, price, img) VALUES (\"" + req.body.p_name + "\", \"" + req.body.cat + "\", \"" + req.body.price + "\", \"" + req.body.img + "\")";
-    // } else if (req.body[0] == "users") {
-    //     q = "INSERT INTO users (uname, pass) VALUES (\"" + req.body.uname + "\", \"" + req.body.pass + "\")";
-    // } else {
-    //     q = "INSERT INTO order_hist (item_id, quantity) VALUES (\"" + req.body.id + "\", \"" + req.body.quant + "\")";
-    // }
-    // connection.query(q, function(err, results) {
-    //     if (err) {
-    //         console.log(connection.state);
-    //         console.log(err);
-    //         throw err;
-    //     }
-    //     connection.end();
-    //     try {
-    //         var x = JSON.parse(JSON.stringify(results));
+    var x = req.body.vals.split(",");
+    console.log("vals: ", req.body.vals);
+    console.log("table: ", req.body.table);
+    if (req.body.table == "items") {
+        q = "INSERT INTO items (p_name, cat, price, img) VALUES (\"" + x[0] + "\", \"" + x[1] + "\", \"" + x[2] + "\", \"" + x[3] + "\")";
+    } else if (req.body.table == "users") {
+        q = "INSERT INTO users (uname, pass) VALUES (\"" + x[0] + "\", \"" + x[1] + "\")";
+    } else {
+        q = "INSERT INTO order_hist (item_id, quantity) VALUES (\"" + x[0] + "\", \"" + x[1] + "\")";
+    }
+    connection.query(q, function(err, results) {
+        if (err) {
+            console.log(connection.state);
+            console.log(err);
+            throw err;
+        }
+        connection.end();
+        try {
+            var x = JSON.parse(JSON.stringify(results));
 
-    //         res.json(x).status(200);
+            res.json(x).status(200);
 
-    //     } catch (error) {
-    //         console.log("catch area");
-    //         res.json({ auth: "false" }).status(200);
-    //     }
-    // });
+        } catch (error) {
+            console.log("catch area");
+            res.json({ auth: "false" }).status(200);
+        }
+    });
     res.status(200);
 });
 

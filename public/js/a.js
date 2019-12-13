@@ -77,7 +77,7 @@ $(".update").on("click", function() {
         $.ajax({
             url: "https://final-cst336-mmenendez.herokuapp.com/admin/update",
             type: "POST",
-            data: result.value,
+            data: { "table": result.value[1], "vals": result.value[2] },
             success: function(res) {
                 Swal.fire({
                     title: "Update completed",
@@ -114,7 +114,7 @@ $(".delete").on("click", function() {
         $.ajax({
             url: "https://final-cst336-mmenendez.herokuapp.com/admin/delete",
             type: "POST",
-            data: result.value,
+            data: { "table": result.value[1], "vals": result.value[2] },
             success: function(res) {
                 Swal.fire({
                     title: "Update completed",
@@ -152,7 +152,7 @@ $(".create").on("click", function() {
         $.ajax({
             url: "https://final-cst336-mmenendez.herokuapp.com/admin/create",
             type: "POST",
-            data: { "Value": result.value[2], "Table": result.value[1] },
+            data: { "table": result.value[1], "vals": result.value[2] },
             success: function(res) {
                 Swal.fire({
                     title: "Update completed",
