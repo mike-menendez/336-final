@@ -20,7 +20,7 @@ router.post('/delete', function(req, res, next) {
     connection.connect();
     var x = req.body.vals.split(",");
     console.log(x);
-    connection.query('DELETE FROM ? WHERE ? = ?', [req.body.table, x[0], x[1]], function(err, results) {
+    connection.query('DELETE FROM `?` WHERE `?` = ?', [req.body.table, x[0], x[1]], function(err, results) {
         if (err) {
             console.log(connection.state);
             console.log(err);
@@ -50,7 +50,7 @@ router.post('/update', function(req, res, next) {
     console.log(req.body);
     var x = req.body.vals.split(",");
     console.log(x);
-    connection.query('UPDATE ? SET ? = ? WHERE ? = ?', [req.body.table, x[0], x[1], x[2], x[3]], function(err, results) {
+    connection.query('UPDATE `?` SET `?` = `?` WHERE `?` = ?', [req.body.table, x[0], x[1], x[2], x[3]], function(err, results) {
         if (err) {
             console.log(connection.state);
             console.log(err);
